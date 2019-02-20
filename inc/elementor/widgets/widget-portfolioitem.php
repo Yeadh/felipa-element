@@ -66,7 +66,7 @@ class thegncy_Widget_Portfolio_Item extends Widget_Base {
      $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
      ?>
 
-        <div data-tilt class="single_item">
+        <div class="single_item">
           <?php the_post_thumbnail() ?>
           <div class="single_item_content">
              <a href="<?php the_permalink(); ?>"><i class="fa fa-fw fa-eye"></i></a>
