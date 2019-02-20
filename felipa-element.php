@@ -1,15 +1,14 @@
 <?php
 /**
-* Plugin Name: TheGncy Element
-* Plugin URI: https://github.com/thegncy/thegncy-plugin
-* Description: After install the thegncy WordPress Theme, you must need to install this "TheGncy Element" first to get all functions of thegncy WP Theme.
+* Plugin Name: Felipa Element
+* Plugin URI: https://github.com/Yeadh/felipa-element
+* Description: After install the Felipa WordPress Theme, you must need to install this "Felipa Element" first to get all functions of Felipa WP Theme.
 * Version: 1.0.0
-* Author: BusinessTheme
-* Author URI: http://themeforest.net/user/business-theme
-* Text Domain: thegncy
+* Author: Nexttheme
+* Author URI: http://themeforest.net/user/nexttheme-org
+* Text Domain: felipa
 * License: GPL/GNU.
 */
-
 
 /**----------------------------------------------------------------*/
 /* Include all file
