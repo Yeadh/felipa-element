@@ -32,7 +32,7 @@ class thegncy_Widget_Counter extends Widget_Base {
          ]
       );
 
-      $repeater->add_control(
+      $this->add_control(
          'icon',
          [
             'label' => __( 'Choose Icon', 'thegncy' ),
@@ -78,7 +78,7 @@ class thegncy_Widget_Counter extends Widget_Base {
       ?>
 
       <div class="counter-item">
-         <img src="<?php echo esc_url($testimonial_single['icon']['url']); ?>" alt="Logo">
+         <img src="<?php echo esc_url($settings['icon']['url']); ?>" alt="Logo">
          <span class="counter"><?php echo $settings['counter']; ?></span>
          <p><?php echo $settings['title']; ?></p>
       </div>
