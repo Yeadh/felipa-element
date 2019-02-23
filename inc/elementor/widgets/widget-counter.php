@@ -32,6 +32,17 @@ class thegncy_Widget_Counter extends Widget_Base {
          ]
       );
 
+      $repeater->add_control(
+         'icon',
+         [
+            'label' => __( 'Choose Icon', 'thegncy' ),
+            'type' => \Elementor\Controls_Manager::MEDIA,
+            'default' => [
+               'url' => \Elementor\Utils::get_placeholder_image_src(),
+            ],
+         ]
+      );
+
       $this->add_control(
          'counter',
          [
@@ -67,6 +78,7 @@ class thegncy_Widget_Counter extends Widget_Base {
       ?>
 
       <div class="counter-item">
+         <img src="<?php echo esc_url($testimonial_single['icon']['url']); ?>" alt="Logo">
          <span class="counter"><?php echo $settings['counter']; ?></span>
          <p><?php echo $settings['title']; ?></p>
       </div>
