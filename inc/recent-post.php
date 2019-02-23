@@ -1,21 +1,21 @@
 <?php
 /**
  * Add Recent Post Widget.
- * @package thegncy
+ * @package felipa
  */
-if( !class_exists('thegncy_Recent_Post') ){
-	class thegncy_Recent_Post extends WP_Widget{
+if( !class_exists('felipa_Recent_Post') ){
+	class felipa_Recent_Post extends WP_Widget{
 		/**
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
 
 			$widget_options = array(
-				'description' 					=> esc_html__('TheGncy recent post here', 'thegncy'), 
+				'description' 					=> esc_html__('Felipa recent post here', 'felipa'), 
 				'customize_selective_refresh' 	=> true,
 			);
 
-			parent:: __construct('thegncy_Recent_Post', esc_html__( 'Recent Post : TheGncy', 'thegncy'), $widget_options );
+			parent:: __construct('felipa_Recent_Post', esc_html__( 'Recent Post : Felipa', 'felipa'), $widget_options );
 
 		}
 		
@@ -35,7 +35,7 @@ if( !class_exists('thegncy_Recent_Post') ){
 
 		}
 		
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','thegncy' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','felipa' );
 		
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -61,7 +61,7 @@ if( !class_exists('thegncy_Recent_Post') ){
                <?php while($posts->have_posts()) : $posts->the_post();  ?>
 	               	<li>
 	               		<a href="<?php the_permalink(); ?>">
-	                        <?php the_post_thumbnail( 'thegncy-65-65' ); ?>
+	                        <?php the_post_thumbnail( 'felipa-65-65' ); ?>
 	                        <span><?php echo get_the_date( 'd M Y' ) ?></span><br>
 	                        <p><?php the_title() ?></p>
 	                	</a>
@@ -103,12 +103,12 @@ if( !class_exists('thegncy_Recent_Post') ){
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_item    = isset( $instance['show_item'] ) ? absint( $instance['show_item'] ) : 4;
 	?>
-		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','thegncy' ); ?></label>
+		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','felipa' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 		
 		
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','thegncy' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','felipa' ); ?></label>
 			<input class="tiny-text" id="<?php echo esc_attr(esc_attr($this->get_field_id( 'show_item' ))); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_item' )); ?>" type="number" step="1" min="1" value="<?php echo esc_attr($show_item); ?>" size="3" />
 		</p>
 
@@ -120,7 +120,7 @@ if( !class_exists('thegncy_Recent_Post') ){
 
 
 // register Contact  Widget widget
-function thegncy_Recent_Post(){
-	register_widget('thegncy_Recent_Post');
+function felipa_Recent_Post(){
+	register_widget('felipa_Recent_Post');
 }
-add_action('widgets_init','thegncy_Recent_Post');
+add_action('widgets_init','felipa_Recent_Post');
