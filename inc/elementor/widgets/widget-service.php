@@ -32,8 +32,7 @@ class thegncy_Widget_Service extends Widget_Base {
          'icon',
          [
             'label' => __( 'Icon', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'flaticon-pencil-case',    
+            'type' => \Elementor\Controls_Manager::MEDIA
          ]     
       );
 
@@ -53,20 +52,6 @@ class thegncy_Widget_Service extends Widget_Base {
             'default' => __('Lorem ipsum dummy text in print and website industry are usually use in these section','thegncy'),
          ]
       );
-
-      $this->add_control(
-         'style',
-         [
-            'label' => __( 'Style', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style-1',
-            'options' => [
-               'style-1'  => __( 'Style 1', 'thegncy' ),
-               'style-2' => __( 'Style 2', 'thegncy' ),
-               'style-3' => __( 'Style 3', 'thegncy' )
-            ],
-         ]
-      );
       
       $this->end_controls_section();
    }
@@ -82,24 +67,12 @@ class thegncy_Widget_Service extends Widget_Base {
       $this->add_inline_editing_attributes( 'text', 'basic' );
       $this->add_inline_editing_attributes( 'style', 'basic' );
       ?>
-      <?php if ($settings['style']=='style-1'): ?>
-         <div class="service-item">
-            <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
-            <h5><?php echo esc_html($settings['title']); ?></h5>
-            <p><?php echo esc_html($settings['text']); ?></p>
-         </div>
-      <?php elseif($settings['style']=='style-2'): ?>
-         <div class="service-item-2">
-            <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
-            <h5><?php echo esc_html($settings['title']); ?></h5>
-            <p><?php echo esc_html($settings['text']); ?></p>
-         </div>
-      <?php elseif($settings['style']=='style-3'): ?>
-         <div class="service-item-3">
-            <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
-            <h5><?php echo esc_html($settings['title']); ?></h5>
-         </div>
-      <?php endif ?>
+ 
+      <div class="service-item-2">
+         <?php echo wp_get_attachment_image( $settings['icon']['id'], 'full' ); ?>
+         <h5><?php echo esc_html($settings['title']); ?></h5>
+         <p><?php echo esc_html($settings['text']); ?></p>
+      </div>
 
       <?php
    }
