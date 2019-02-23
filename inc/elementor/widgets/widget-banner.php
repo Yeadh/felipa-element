@@ -3,11 +3,11 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Banner
+// Banner Parallax
 class thegncy_Widget_Banner extends Widget_Base {
  
    public function get_name() {
-      return 'banner';
+      return 'banner_pop';
    }
  
    public function get_title() {
@@ -15,7 +15,7 @@ class thegncy_Widget_Banner extends Widget_Base {
    }
  
    public function get_icon() { 
-        return 'eicon-banner';
+        return 'eicon-slider-video';
    }
  
    public function get_categories() {
@@ -25,9 +25,9 @@ class thegncy_Widget_Banner extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'banner_section',
+         'banner_pop_section',
          [
-            'label' => esc_html__( 'Banner', 'thegncy' ),
+            'label' => esc_html__( 'Banner with popup video', 'thegncy' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -37,7 +37,7 @@ class thegncy_Widget_Banner extends Widget_Base {
          [
             'label' => __( 'Title', 'thegncy' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Make present for future ready','thegncy')
+            'default' => __('Creative business agency make big deals','thegncy')
          ]
       );
 
@@ -46,66 +46,10 @@ class thegncy_Widget_Banner extends Widget_Base {
          [
             'label' => __( 'Description', 'thegncy' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dummy text are usually use. Replace your text','thegncy')
+            'default' => __('Lorem ipsum dummy text are usually use. Replace your text bare usuallly use in these section. So i used here. replace your text','thegncy')
          ]
       );
       
-      $this->add_control(
-         'image',
-         [
-            'label' => __( 'Choose a image', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::MEDIA,
-            'default' => [
-               'url' => \Elementor\Utils::get_placeholder_image_src(),
-            ],
-         ]
-      );
-
-      $social = new \Elementor\Repeater();
-
-      $social->add_control(
-         'social_icon', [
-            'label' => __( 'Icon', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::ICON,
-            'label_block' => true,
-            'default' => 'fa fa-facebook',
-         ]
-      );
-
-      $social->add_control(
-         'social_url', [
-            'label' => __( 'URL', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT
-         ]
-      );
-
-      $this->add_control(
-         'social_list',
-         [
-            'label' => __( 'Social Media', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::REPEATER,
-            'fields' => $social->get_controls(),
-            'default' => [
-               [
-                  'social_icon' => 'fa fa-facebook',
-                  'social_url' => '#',                  
-               ],
-               [
-                  'social_icon' => 'fa fa-twitter',
-                  'social_url' => '#',
-               ],
-               [
-                  'social_icon' => 'fa fa-dribbble',
-                  'social_url' => '#',
-               ],
-               [
-                  'social_icon' => 'fa fa-linkedin',
-                  'social_url' => '#',
-               ]
-            ],
-            'feature' => '{{{ social_list }}}',
-         ]
-      );
 
       $button = new \Elementor\Repeater();
 
@@ -144,50 +88,6 @@ class thegncy_Widget_Banner extends Widget_Base {
             'feature' => '{{{ button_list }}}',
          ]
       );
-
-      $counter = new \Elementor\Repeater();
-
-      $counter->add_control(
-         'counter_text', [
-            'label' => __( 'Text', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Projects done','thegncy')
-         ]
-      );
-
-      $counter->add_control(
-         'counter_value', [
-            'label' => __( 'Value', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 566,
-         ]
-      );
-
-      $this->add_control(
-         'counter_list',
-         [
-            'label' => __( 'Counter', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::REPEATER,
-            'fields' => $counter->get_controls(),
-            'default' => [
-               [
-                  'counter_text' => 'Projects done',
-                  'counter_value' => 458,                  
-               ],
-               [
-                  'counter_text' => 'Happy clients',
-                  'counter_value' => 524,                  
-               ],
-               [
-                  'counter_text' => 'Projects running',
-                  'counter_value' => 458,                  
-               ]
-            ],
-            'feature' => '{{{ counter_list }}}',
-         ]
-      );
-
-
       
       $this->end_controls_section();
 
@@ -202,56 +102,41 @@ class thegncy_Widget_Banner extends Widget_Base {
       //Inline Editing
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'description', 'basic' );
+      $this->add_inline_editing_attributes( 'button_list', 'basic' );
       ?>
 
-      <section id="banner" class="banner">
+      <section id="banner" class="banner-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 wow fadeInLeft" data-wow-duration="2.5s">
-                    <div class="bnr-social">
+                <div class="col-lg-6 d-none d-xl-block">
+                    <div class="banner-3-content">
+                      <h1><?php echo esc_html($settings['title']); ?></h1>
+                      <p><?php echo esc_html($settings['description']); ?></p>
+                      <div class="bnr-btn">
                         <ul class="list-inline">
-                           <?php foreach (  $settings['social_list'] as $key => $social_item ) { ?>
-                             <li class="list-inline-item"><a href="<?php echo esc_url( $social_item['social_url'] ); ?>"><i class="fa-fw <?php echo esc_attr( $social_item['social_icon'] ); ?>"></i></a></li>
-                           <?php } ?>
-                        </ul>
-                    </div>
-                    <h1><?php echo esc_html($settings['title']); ?></h1>
-                    <p><?php echo esc_html($settings['description']); ?></p>
-
-                    <div class="bnr-btn">
-                        <ul class="list-inline">
-                           <?php foreach (  $settings['button_list'] as $key => $button_item ) { ?>
+                          <?php foreach (  $settings['button_list'] as $key => $button_item ) { ?>
                              <li class="list-inline-item"><a href="<?php echo esc_url( $button_item['btn_url'] ); ?>"><?php echo esc_attr( $button_item['btn_text'] ); ?></a></li>
                            <?php } ?>
                         </ul>
+                      </div>
                     </div>
-                    <div class="bnr-left-sape">
-                        <img src="<?php echo get_template_directory_uri() ?>/img/side-shape-left.png" alt="shape">
-                    </div>
-
-                    <div class="bnr-counter">
+                </div>
+                <div class="col-lg-12 d-block d-lg-block d-sm-block d-xl-none">
+                    <div class="banner-3-content">
+                      <h1><?php echo esc_html($settings['title']); ?></h1>
+                      <p><?php echo esc_html($settings['description']); ?></p>
+                      <div class="bnr-btn">
                         <ul class="list-inline">
-                           <?php foreach (  $settings['counter_list'] as $key => $counter_item ) { ?>
-                              <li class="list-inline-item">
-                                <span class="counter"><?php echo esc_attr( $counter_item['counter_value'] ); ?></span>
-                                <p><?php echo esc_attr( $counter_item['counter_text'] ); ?></p>
-                              </li>
+                          <?php foreach (  $settings['button_list'] as $key => $button_item ) { ?>
+                             <li class="list-inline-item"><a href="<?php echo esc_url( $button_item['btn_url'] ); ?>"><?php echo esc_attr( $button_item['btn_text'] ); ?></a></li>
                            <?php } ?>
                         </ul>
+                      </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-        <div class="bnr-shape-img" style="background: url('<?php
-         if ($settings['image']['id']) { echo wp_get_attachment_url( $settings['image']['id'], 'full' );
-         } else {
-            echo get_template_directory_uri().'/img/bnr-shape.png';
-         } ?>');">
-         </div>
-
-   </section>
+      </section>
 
       <?php
    }
