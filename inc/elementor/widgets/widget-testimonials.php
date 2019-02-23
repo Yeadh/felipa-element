@@ -32,6 +32,19 @@ class thegncy_Widget_Testimonials extends Widget_Base {
          ]
       );
 
+      $this->add_control(
+         'style',
+         [
+            'label' => __( 'Style', 'thegncy' ),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'fullwidth',
+            'options' => [
+               'fullwidth'  => __( 'Full Width', 'thegncy' ),
+               'twocolumn' => __( 'Two Column', 'thegncy' )
+            ],
+         ]
+      );
+
       $repeater = new \Elementor\Repeater();
 
       $repeater->add_control(
@@ -97,14 +110,34 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $this->add_inline_editing_attributes( 'testimonial_list', 'basic' );
       
       ?>
+      <?php if ($settings['style']=='fullwidth'){ ?>
+      
       <div class="testimonials">
          <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
          <div class="testimonial-item">
-            <img src="<?php echo esc_url($testimonial_single['image']['url']); ?>" alt="Logo">
             <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
             <h4><?php echo esc_html($testimonial_single['name']); ?></h4>
             <span><?php echo esc_html($testimonial_single['designation']); ?></span>
          </div>
+         <?php endforeach; ?>
+      </div>
+
+   <?php } elseif ($settings['style']=='twocolumn') { ?>
+      
+      <div class="testimonials-2 row">
+         <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
+             <div class="col-md-6">
+               <div class="testimonial-item-2">
+                  <div class="testi-img">
+                     <img src="<?php echo esc_url($testimonial_single['image']['url']); ?>" alt="Logo">
+                  </div>
+                  <div class="testi-content">
+                     <p><?php echo wp_trim_words( $testimonial_single['testimonial'], 15, '...' ); ?></p>
+                     <h5><?php echo esc_html($testimonial_single['name']); ?></h5>
+                     <span><?php echo esc_html($testimonial_single['designation']); ?></span>
+                  </div>
+               </div>
+            </div>
          <?php endforeach; ?>
       </div>
    <?php } 
