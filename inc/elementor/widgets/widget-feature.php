@@ -28,23 +28,7 @@ class thegncy_Widget_Feature extends Widget_Base {
             'type' => Controls_Manager::SECTION,
          ]
       );
-      $this->add_control(
-         'icon',
-         [
-            'label' => __( 'Icon', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'flaticon-pencil-case',    
-         ]     
-      );
 
-      $this->add_control(
-         'title',
-         [
-            'label' => __( 'Title', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Increase business 3x speed','thegncy'),
-         ]
-      );
       $this->add_control(
          'text',
          [
@@ -63,17 +47,14 @@ class thegncy_Widget_Feature extends Widget_Base {
       $settings = $this->get_settings_for_display();
       
       //Inline Editing
-      $this->add_inline_editing_attributes( 'icon', 'basic' );
-      $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'text', 'basic' );
       ?>
 
       <div class="feature-item">
            <div class="feature-item-icon">
-               <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
+               <i class="arrow_right"></i>
            </div>
            <div class="feature-item-content">
-               <h5><?php echo esc_html($settings['title']); ?></h5>
                 <p><?php echo esc_html($settings['text']); ?></p>
            </div>
        </div>

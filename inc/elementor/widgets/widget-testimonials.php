@@ -101,10 +101,23 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       <div class="testimonials">
          <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
          <div class="testimonial-item">
-            <img src="<?php echo esc_url($testimonial_single['image']['url']); ?>" alt="Logo">
             <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
-            <h4><?php echo esc_html($testimonial_single['name']); ?></h4>
-            <span><?php echo esc_html($testimonial_single['designation']); ?></span>
+            <div class="row">
+               <div class="col-sm-2">
+                  <img src="<?php echo esc_url($testimonial_single['image']['url']); ?>" alt="Logo">
+               </div>
+               <div class="col-sm-5">
+                  <h5><?php echo esc_html($testimonial_single['name']); ?></h5>
+                  <span><?php echo esc_html($testimonial_single['designation']); ?></span>
+               </div>
+               <div class="col-sm-5">
+                  <ul class="list-inline">
+                     <?php for ($i=0; $i < 5 ; $i++) { ?>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                     <?php } ?>               
+                  </ul>
+               </div>
+            </div>
          </div>
          <?php endforeach; ?>
       </div>

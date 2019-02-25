@@ -106,11 +106,11 @@ class thegncy_Widget_Team extends Widget_Base {
       $this->add_inline_editing_attributes( 'social_url', 'basic' );
       ?>
       <div class="team">
-         <?php echo wp_get_attachment_image( $settings['image']['id'], 'thegncy-370x350' ); ?>
-
-         <div class="team-content">
-            <h5 <?php echo $this->get_render_attribute_string( 'name' ); ?>><?php echo esc_html($settings['name']); ?></h5>
+         <?php echo wp_get_attachment_image( $settings['image']['id']); ?>
+         <h5 <?php echo $this->get_render_attribute_string( 'name' ); ?>><?php echo esc_html($settings['name']); ?></h5>
             <span <?php echo $this->get_render_attribute_string( 'designation' ); ?>><?php echo esc_html($settings['designation']); ?></span>
+
+         <div class="team-content">            
             <ul class="list-inline">
                <?php 
                foreach (  $settings['social_media'] as $single_social ) { ?>
