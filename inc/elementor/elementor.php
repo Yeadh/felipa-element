@@ -48,7 +48,6 @@ class thegncy_ElementorCustomElement {
     if(defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base')){
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-banner.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-title.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-tiltimage.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-contacts.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-pricing.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
