@@ -66,22 +66,20 @@ class thegncy_Widget_Blog extends Widget_Base {
                while ( $blog->have_posts() ) : $blog->the_post();
                ?>
                <!-- blog -->
-               <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-duration="2.5s">
-                  <div class="blog-item-shape">
-                     <div class="blog-item-shape-img">
-                        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-1280-853'); ?>" alt="<?php the_title() ?>">
-                        <span class="date">28 Dec</span>
-                     </div>
-                     <div class="blog-item-shape-content">
-                        <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 7, '...' );?></h5></a>
+               <div class="col-lg-4 col-sm-6">
+                  <div class="blog-item">
+                     <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-1280-853'); ?>" alt="<?php the_title() ?>">
+                     <div class="blog-item-content">
                         <ul class="list-inline">
                            <li class="list-inline-item">
-                              Tags: <?php the_tags( ' ', ', ',' ') ?>
+                              <i class="icon_profile"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="link"><?php the_author(); ?></a>
                            </li>
-                           <li class="list-inline-item float-right">
-                              Read: <?php echo TheGncygetPostViews(get_the_ID()); ?>
+                           <li class="list-inline-item">
+                              <i class="icon_folder-open"></i><?php the_category( ',' ) ?>
                            </li>
                         </ul>
+                        <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 8, '...' );?></h5></a>
+                        <p><?php echo felipa_excerpt(10) ?></p>
                      </div>
                   </div>
                </div>
