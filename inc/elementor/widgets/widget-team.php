@@ -114,7 +114,7 @@ class thegncy_Widget_Team extends Widget_Base {
             <ul class="list-inline">
                <?php 
                foreach (  $settings['social_media'] as $single_social ) { ?>
-                  <li class="list-inline-item"><a href="<?php echo $single_social['social_url'] ?>"><i class="<?php echo $single_social['social_icon'] ?>"></i></a></li>
+                  <li class="list-inline-item"><a href="<?php echo $single_social['social_url'] ?>"><i class="fa-fw <?php echo $single_social['social_icon'] ?>"></i></a></li>
                <?php 
                } ?>
             </ul>

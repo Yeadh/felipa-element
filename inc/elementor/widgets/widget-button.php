@@ -47,20 +47,7 @@ class thegncy_Widget_Button extends Widget_Base {
             'default' => '#'
          ]
       );
-
-      $this->add_control(
-         'color',
-         [
-            'label' => __( 'Alternate Color', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'thegncy' ),
-            'label_off' => __( 'Off', 'thegncy' ),
-            'return_value' => 'yes',
-            'default' => 'no',
-   
-         ]
-      );
-
+      
       $this->add_control(
          'align',
          [
