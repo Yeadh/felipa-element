@@ -68,7 +68,14 @@ class thegncy_Widget_Blog extends Widget_Base {
                <!-- blog -->
                <div class="col-lg-4 col-sm-6">
                   <div class="blog-item">
-                     <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-1280-853'); ?>" alt="<?php the_title() ?>">
+                     <div class="blog-item-img">
+                           <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-1280-853'); ?>" alt="<?php the_title() ?>">
+                           <div class="blog-item-date text-center">
+                              <h3><?php the_time( 'd' ) ?></h3>
+                              <span><?php the_time( 'M' ) ?></span>
+                           </div>
+                     </div>
+                     
                      <div class="blog-item-content">
                         <ul class="list-inline">
                            <li class="list-inline-item">

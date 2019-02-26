@@ -78,7 +78,9 @@ class thegncy_Widget_Counter extends Widget_Base {
       ?>
 
       <div class="counter-item">
-         <img src="<?php echo esc_url($settings['icon']['url']); ?>" alt="Logo">
+         <div class="counter-icon">
+            <img src="<?php echo esc_url($settings['icon']['url']); ?>" alt="Logo">
+         </div>
          <span class="counter"><?php echo $settings['counter']; ?></span>
          <p><?php echo $settings['title']; ?></p>
       </div>
