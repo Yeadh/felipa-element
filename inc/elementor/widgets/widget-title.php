@@ -111,7 +111,7 @@ class thegncy_Widget_Title extends Widget_Base {
       ?>
       <div class="section-title <?php if('yes' === $settings['white-color']){echo 'white';}else{echo 'color';} ?>" style="text-align: <?php echo esc_attr($settings['align']); ?>">
            <span <?php echo $this->get_render_attribute_string( 'sub-title' ); ?>><?php echo esc_html($settings['sub-title']); ?></span>
-           <h1 <?php echo $this->get_render_attribute_string( 'title' ); ?>><?php echo $settings['title']; ?></h1>
+           <h1 <?php echo $this->get_render_attribute_string( 'title' ); ?>><?php echo esc_html($settings['title']); ?></h1>
 
            <?php if('yes' === $settings['border']){?>
               <?php if('yes' === $settings['white-color']){?>
