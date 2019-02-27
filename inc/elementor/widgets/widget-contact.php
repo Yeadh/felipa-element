@@ -10,7 +10,7 @@ class thegncy_Widget_Contact extends Widget_Base {
    }
  
    public function get_title() {
-      return esc_html__( 'contact Item', 'thegncy' );
+      return esc_html__( 'Contact Item', 'thegncy' );
    }
  
    public function get_icon() { 
@@ -41,7 +41,7 @@ class thegncy_Widget_Contact extends Widget_Base {
          [
             'label' => __( 'Title', 'thegncy' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Design','thegncy'),
+            'default' => __('Call us','thegncy'),
          ]
       );
       $this->add_control(
@@ -64,13 +64,12 @@ class thegncy_Widget_Contact extends Widget_Base {
       $this->add_inline_editing_attributes( 'icon', 'basic' );
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'text', 'basic' );
-      $this->add_inline_editing_attributes( 'style', 'basic' );
       ?>
  
       <div class="contact-item">
          <?php echo wp_get_attachment_image( $settings['icon']['id'], 'full' ); ?>
          <h5><?php echo esc_html($settings['title']); ?></h5>
-         <p><?php echo esc_html($settings['text']); ?></p>
+         <p><?php echo $settings['text'] ?></p>
       </div>
 
       <?php
