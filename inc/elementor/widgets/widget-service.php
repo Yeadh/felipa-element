@@ -70,7 +70,7 @@ class thegncy_Widget_Service extends Widget_Base {
       ?>
  
       <div class="service-item-2">
-         <i class="<?php echo wp_get_attachment_image($settings['icon']); ?>"></i>
+         <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
          <h5><?php echo esc_html($settings['title']); ?></h5>
          <p><?php echo esc_html($settings['text']); ?></p>
       </div>
