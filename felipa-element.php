@@ -3,7 +3,7 @@
 * Plugin Name: Felipa Element
 * Plugin URI: https://github.com/Yeadh/felipa-element
 * Description: After install the Felipa WordPress Theme, you must need to install this "Felipa Element" first to get all functions of Felipa WP Theme.
-* Version: 1.0.2
+* Version: 1.0.3
 * Author: Nexttheme
 * Author URI: http://themeforest.net/user/nexttheme-org
 * Text Domain: felipa
