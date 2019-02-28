@@ -61,7 +61,7 @@ if( !class_exists('felipa_Recent_Post') ){
                <?php while($posts->have_posts()) : $posts->the_post();  ?>
 	               	<li>
 	               		<a href="<?php the_permalink(); ?>">
-	                        <?php the_post_thumbnail( 'felipa-65-65' ); ?>
+	                        <?php the_post_thumbnail( 'felipa-65-70' ); ?>
 	                        <span><?php echo get_the_date( 'd M Y' ) ?></span><br>
 	                        <p><?php the_title() ?></p>
 	                	</a>
