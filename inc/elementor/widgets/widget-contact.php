@@ -32,7 +32,7 @@ class thegncy_Widget_Contact extends Widget_Base {
          'icon',
          [
             'label' => __( 'Icon', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::MEDIA
+            'type' => \Elementor\Controls_Manager::TEXT
          ]     
       );
 
@@ -67,7 +67,7 @@ class thegncy_Widget_Contact extends Widget_Base {
       ?>
  
       <div class="contact-item">
-         <?php echo wp_get_attachment_image( $settings['icon']['id'], 'full' ); ?>
+         <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
          <h5><?php echo esc_html($settings['title']); ?></h5>
          <p><?php echo $settings['text'] ?></p>
       </div>
