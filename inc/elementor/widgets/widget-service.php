@@ -32,7 +32,8 @@ class thegncy_Widget_Service extends Widget_Base {
          'icon',
          [
             'label' => __( 'Icon', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::MEDIA
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => __('flaticon-money','thegncy'),
          ]     
       );
 
@@ -69,7 +70,7 @@ class thegncy_Widget_Service extends Widget_Base {
       ?>
  
       <div class="service-item-2">
-         <?php echo wp_get_attachment_image( $settings['icon']['id'], 'full' ); ?>
+         <?php echo wp_get_attachment_image($settings['icon']); ?>
          <h5><?php echo esc_html($settings['title']); ?></h5>
          <p><?php echo esc_html($settings['text']); ?></p>
       </div>
