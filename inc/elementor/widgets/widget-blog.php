@@ -69,7 +69,7 @@ class thegncy_Widget_Blog extends Widget_Base {
                <div class="col-lg-4 col-sm-6">
                   <div class="blog-item">
                      <div class="blog-item-img">
-                        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-1280-853'); ?>" alt="<?php the_title() ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-360-200'); ?>" alt="<?php the_title() ?>">
                      </div>
                      
                      <div class="blog-item-content">
