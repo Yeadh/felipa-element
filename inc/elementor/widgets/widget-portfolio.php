@@ -106,7 +106,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'deacription', 'basic' );
       ?>
-      <div class="portfolio">
+      <div class="portfolio container-fluid">
          <?php
          $portfolio = new \WP_Query( array(
          'post_type' => 'portfolio',
