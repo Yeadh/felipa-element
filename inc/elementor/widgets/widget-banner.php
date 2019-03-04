@@ -108,7 +108,7 @@ class thegncy_Widget_Banner extends Widget_Base {
       <section id="banner" class="banner-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 d-none d-xl-block">
+                <div class="col-lg-8 d-none d-xl-block">
                     <div class="banner-3-content">
                       <h1><?php echo esc_html($settings['title']); ?></h1>
                       <p><?php echo esc_html($settings['description']); ?></p>
