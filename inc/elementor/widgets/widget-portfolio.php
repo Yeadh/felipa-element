@@ -122,6 +122,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
 
             <div class="portfolio-item">
                 <?php the_post_thumbnail( 'thegncy-350-325' ) ?>
+                <span><?php foreach ($portfolio_terms as $portfolio_term) { echo esc_attr( $portfolio_term->name ); } ?></span>
                 <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
             </div>
 
