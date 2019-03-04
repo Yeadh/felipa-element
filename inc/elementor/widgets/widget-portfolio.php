@@ -106,9 +106,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'deacription', 'basic' );
       ?>
-
-      <section class="portfolio-sec">
-         <div class="portfolio">
+      <div class="portfolio">
          <?php
          $portfolio = new \WP_Query( array(
          'post_type' => 'portfolio',
@@ -125,11 +123,8 @@ class thegncy_Widget_Portfolio extends Widget_Base {
              <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
          </div>
 
-         <?php endwhile; wp_reset_postdata(); ?>
-                     
-         </div>
-      </section>
-
+         <?php endwhile; wp_reset_postdata(); ?> 
+      </div>
       <?php }
  
 }
