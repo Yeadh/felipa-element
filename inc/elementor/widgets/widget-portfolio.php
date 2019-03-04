@@ -108,41 +108,25 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       ?>
 
       <section class="portfolio-sec">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="space d-none d-xl-block" style="height: 50px"></div>
-                    <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
-                    <h2><?php echo esc_html( $settings['title'] ); ?></h2>
-                    <p><?php echo esc_html( $settings['deacription'] ); ?></p>
-                    <ul class="list-inline d-xs-none">
-                        <li class="list-inline-item"><i class="prevPortfolio fa fa-arrow-left"></i></li>
-                        <li class="list-inline-item"><i class="nextPortfolio fa fa-arrow-right"></i></li>
-                    </ul>
-                </div>
-                <div class="col-md-8">
-                    <div class="row portfolio">
-                     <?php
-                     $portfolio = new \WP_Query( array(
-                     'post_type' => 'portfolio',
-                     'posts_per_page' => $settings['ppp']['size']
-                     ));
-                     /* Start the Loop */
-                     while ( $portfolio->have_posts() ) : $portfolio->the_post();
-                     $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
-                     ?>
+        <div class="container-fluid">
+            <div class="portfolio">
+            <?php
+            $portfolio = new \WP_Query( array(
+            'post_type' => 'portfolio',
+            'posts_per_page' => $settings['ppp']['size']
+            ));
+            /* Start the Loop */
+            while ( $portfolio->have_posts() ) : $portfolio->the_post();
+            $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
+            ?>
 
-                      <div class="col-md-6">
-                          <div class="portfolio-item">
-                              <?php the_post_thumbnail( 'thegncy-350-325' ) ?>
-                              <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
-                          </div>
-                      </div>
+            <div class="portfolio-item">
+                <?php the_post_thumbnail( 'thegncy-350-325' ) ?>
+                <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
+            </div>
 
-                     <?php endwhile; wp_reset_postdata(); ?>
+            <?php endwhile; wp_reset_postdata(); ?>
                         
-                    </div>
-                </div>
             </div>
         </div>
       </section>
