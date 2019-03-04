@@ -106,24 +106,26 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'deacription', 'basic' );
       ?>
-      <div class="portfolio container-fluid">
-         <?php
-         $portfolio = new \WP_Query( array(
-         'post_type' => 'portfolio',
-         'posts_per_page' => $settings['ppp']['size']
-         ));
-         /* Start the Loop */
-         while ( $portfolio->have_posts() ) : $portfolio->the_post();
-         $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
-         ?>
+      <div class="container-fluid">
+         <div class="portfolio">
+            <?php
+            $portfolio = new \WP_Query( array(
+            'post_type' => 'portfolio',
+            'posts_per_page' => $settings['ppp']['size']
+            ));
+            /* Start the Loop */
+            while ( $portfolio->have_posts() ) : $portfolio->the_post();
+            $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
+            ?>
 
-         <div class="portfolio-item">
-             <?php the_post_thumbnail( 'felipa-475-540' ) ?>
-             <span><?php foreach ($portfolio_terms as $portfolio_term) { echo esc_attr( $portfolio_term->name ); } ?></span>
-             <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
+            <div class="portfolio-item">
+                <?php the_post_thumbnail( 'felipa-475-540' ) ?>
+                <span><?php foreach ($portfolio_terms as $portfolio_term) { echo esc_attr( $portfolio_term->name ); } ?></span>
+                <a href="<?php the_permalink(); ?>"><h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5></a>
+            </div>
+
+            <?php endwhile; wp_reset_postdata(); ?> 
          </div>
-
-         <?php endwhile; wp_reset_postdata(); ?> 
       </div>
       <?php }
  
