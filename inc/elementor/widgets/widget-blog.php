@@ -76,7 +76,7 @@ class thegncy_Widget_Blog extends Widget_Base {
                         <p class="front-date"><?php the_time( 'd M Y' ) ?></p>
                         <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 8, '...' );?></h5></a>
                         <p><?php echo felipa_excerpt(10) ?></p>
-                        <a class="felipa-btn" href="<?php the_permalink(); ?>"><?php echo esc_html( 'Read More' ); ?></a>
+                        <a class="blog-btn" href="<?php the_permalink(); ?>"><?php echo esc_html( 'Read More' ); ?></a>
                      </div>
                   </div>
                </div>
