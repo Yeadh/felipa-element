@@ -73,14 +73,7 @@ class thegncy_Widget_Blog extends Widget_Base {
                      </div>
                      
                      <div class="blog-item-content">
-                        <ul class="list-inline">
-                           <li class="list-inline-item">
-                              <i class="icon_profile"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="link"><?php the_author(); ?></a>
-                           </li>
-                           <li class="list-inline-item">
-                              <i class="icon_folder-open_alt"></i><?php the_category( ',' ) ?>
-                           </li>
-                        </ul>
+                        <p class="front-date"><?php the_time( 'd M Y' ) ?></p>
                         <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 8, '...' );?></h5></a>
                         <p><?php echo felipa_excerpt(10) ?></p>
                         <a class="felipa-btn" href="<?php the_permalink(); ?>"><?php echo esc_html( 'Read More' ); ?></a>
