@@ -80,7 +80,7 @@ class thegncy_Widget_Button extends Widget_Base {
       $this->add_inline_editing_attributes( 'color', 'basic' );
       ?>
 
-      <div class="felipa-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
+      <div class="<?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
          <a class="felipa-btn" href="<?php echo esc_url( $settings['button_url'] ); ?>">
             <?php echo esc_html( $settings['button_text'] ); ?></a>
       </div>

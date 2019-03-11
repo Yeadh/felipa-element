@@ -101,6 +101,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       <div class="testimonials">
          <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
          <div class="testimonial-item">
+            <img class="testi-quote" src="<?php echo get_template_directory_uri() ?>/img/quote.png" alt="img">
             <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
             <div class="row">
                <div class="col-sm-2">
@@ -109,13 +110,6 @@ class thegncy_Widget_Testimonials extends Widget_Base {
                <div class="col-sm-5">
                   <h5><?php echo esc_html($testimonial_single['name']); ?></h5>
                   <span><?php echo esc_html($testimonial_single['designation']); ?></span>
-               </div>
-               <div class="col-sm-5">
-                  <ul class="list-inline">
-                     <?php for ($i=0; $i < 5 ; $i++) { ?>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                     <?php } ?>               
-                  </ul>
                </div>
             </div>
          </div>
