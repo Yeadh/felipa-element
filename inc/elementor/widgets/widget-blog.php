@@ -70,12 +70,26 @@ class thegncy_Widget_Blog extends Widget_Base {
                   <div class="blog-item">
                      <div class="blog-item-img">
                         <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-360-200'); ?>" alt="<?php the_title() ?>">
+                        <ul class="list-inline blog-item-meta-1">
+                           <li class="list-inline-item">
+                              <?php the_category( ',' ) ?>
+                           </li>
+                           <li class="list-inline-item">
+                              Comment <?php comments_number( 0, 1, '%' ); ?>
+                           </li>
+                        </ul>
                      </div>
                      
                      <div class="blog-item-content">
-                        <p class="front-date"><?php the_time( 'd M Y' ) ?></p>
-                        <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 8, '...' );?></h5></a>
-                        <p><?php echo felipa_excerpt(10) ?></p>
+                        <a href="<?php the_permalink() ?>"><h4><?php echo wp_trim_words( get_the_title(), 8, '...' );?></h4></a>
+                        <ul class="list-inline blog-item-meta-2">
+                           <li class="list-inline-item">
+                              <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?><?php the_author(); ?></a>
+                           </li>
+                           <li class="list-inline-item">
+                              <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+                           </li>
+                        </ul>       
                      </div>
                   </div>
                </div>
