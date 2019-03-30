@@ -17,6 +17,7 @@
 include_once(dirname( __FILE__ ). '/inc/custom-posts.php');
 include_once(dirname( __FILE__ ). '/inc/elementor/elementor.php');
 include_once(dirname( __FILE__ ). '/inc/recent-post.php');
+include_once(dirname( __FILE__ ). '/inc/social-share.php');
 include_once(dirname( __FILE__ ). '/inc/plugin-update-checker/plugin-update-checker.php');
 
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
