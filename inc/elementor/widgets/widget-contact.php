@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // contact item
-class thegncy_Widget_Contact extends Widget_Base {
+class felipa_Widget_Contact extends Widget_Base {
  
    public function get_name() {
       return 'Contact item';
    }
  
    public function get_title() {
-      return esc_html__( 'Contact Item', 'thegncy' );
+      return esc_html__( 'Contact Item', 'felipa' );
    }
  
    public function get_icon() { 
@@ -18,20 +18,20 @@ class thegncy_Widget_Contact extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'contact_section',
          [
-            'label' => esc_html__( 'Contact Item', 'thegncy' ),
+            'label' => esc_html__( 'Contact Item', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'thegncy' ),
+            'label' => __( 'Icon', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]     
       );
@@ -39,15 +39,15 @@ class thegncy_Widget_Contact extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Call us','thegncy'),
+            'default' => __('Call us','felipa'),
          ]
       );
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'thegncy' ),
+            'label' => __( 'Text', 'felipa' ),
             'type' => \Elementor\Controls_Manager::WYSIWYG
          ]
       );
@@ -76,4 +76,4 @@ class thegncy_Widget_Contact extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Contact );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Contact );

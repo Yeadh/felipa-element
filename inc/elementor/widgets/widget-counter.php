@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class thegncy_Widget_Counter extends Widget_Base {
+class felipa_Widget_Counter extends Widget_Base {
  
    public function get_name() {
       return 'counter';
    }
  
    public function get_title() {
-      return esc_html__( 'Counter', 'thegncy' );
+      return esc_html__( 'Counter', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Counter extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class thegncy_Widget_Counter extends Widget_Base {
       $this->start_controls_section(
          'title_section',
          [
-            'label' => esc_html__( 'Counter', 'thegncy' ),
+            'label' => esc_html__( 'Counter', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,7 +35,7 @@ class thegncy_Widget_Counter extends Widget_Base {
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Choose Icon', 'thegncy' ),
+            'label' => __( 'Choose Icon', 'felipa' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -46,7 +46,7 @@ class thegncy_Widget_Counter extends Widget_Base {
       $this->add_control(
          'counter',
          [
-            'label' => __( 'Counter Value', 'thegncy' ),
+            'label' => __( 'Counter Value', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '445'
          ]
@@ -55,9 +55,9 @@ class thegncy_Widget_Counter extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Projects done','thegncy' )
+            'default' => __('Projects done','felipa' )
          ]
       );
       
@@ -90,4 +90,4 @@ class thegncy_Widget_Counter extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Counter );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Counter );

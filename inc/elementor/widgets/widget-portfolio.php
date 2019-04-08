@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // portfolio
-class thegncy_Widget_Portfolio extends Widget_Base {
+class felipa_Widget_Portfolio extends Widget_Base {
  
    public function get_name() {
       return 'portfolio';
    }
  
    public function get_title() {
-      return esc_html__( 'Portfolio', 'thegncy' );
+      return esc_html__( 'Portfolio', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->start_controls_section(
          'portfolio_section',
          [
-            'label' => esc_html__( 'Portfolio', 'thegncy' ),
+            'label' => esc_html__( 'Portfolio', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,12 +35,12 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Style', 'thegncy' ),
+            'label' => __( 'Style', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'slider',
             'options' => [
-               'slider'  => __( 'Slider', 'thegncy' ),
-               'masonry' => __( 'Masonry', 'thegncy' )
+               'slider'  => __( 'Slider', 'felipa' ),
+               'masonry' => __( 'Masonry', 'felipa' )
             ],
          ]
       );
@@ -48,7 +48,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'CASE STUDIES',
          ]
@@ -57,7 +57,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Latest portfolios',
          ]
@@ -66,7 +66,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'deacription',
          [
-            'label' => __( 'Deacription', 'thegncy' ),
+            'label' => __( 'Deacription', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Lorem ipsum dolor sit amet, consectetur sicing elit, sed do eiusmod tempor incidid ut labore et dolore',
          ]
@@ -75,7 +75,7 @@ class thegncy_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'ppp',
          [
-            'label' => __( 'Number of Portfolio', 'thegncy' ),
+            'label' => __( 'Number of Portfolio', 'felipa' ),
             'type' => Controls_Manager::SLIDER,
             'range' => [
                'no' => [
@@ -131,4 +131,4 @@ class thegncy_Widget_Portfolio extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Portfolio );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Portfolio );

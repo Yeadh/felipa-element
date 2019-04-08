@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Button
-class thegncy_Widget_Button extends Widget_Base {
+class felipa_Widget_Button extends Widget_Base {
  
    public function get_name() {
       return 'button';
    }
  
    public function get_title() {
-      return esc_html__( 'Button', 'thegncy' );
+      return esc_html__( 'Button', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Button extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,22 +27,22 @@ class thegncy_Widget_Button extends Widget_Base {
       $this->start_controls_section(
          'button_section',
          [
-            'label' => esc_html__( 'Button', 'thegncy' ),
+            'label' => esc_html__( 'Button', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
 
       $this->add_control(
          'button_text', [
-            'label' => __( 'Button Text', 'thegncy' ),
+            'label' => __( 'Button Text', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Learn More','thegncy')
+            'default' => __('Learn More','felipa')
          ]
       );
 
       $this->add_control(
          'button_url', [
-            'label' => __( 'Button URL', 'thegncy' ),
+            'label' => __( 'Button URL', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -51,13 +51,13 @@ class thegncy_Widget_Button extends Widget_Base {
       $this->add_control(
          'align',
          [
-            'label' => __( 'Align', 'thegncy' ),
+            'label' => __( 'Align', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'solid',
             'options' => [
-               'center'  => __( 'Center', 'thegncy' ),
-               'left' => __( 'Left', 'thegncy' ),
-               'right' => __( 'Right', 'thegncy' )
+               'center'  => __( 'Center', 'felipa' ),
+               'left' => __( 'Left', 'felipa' ),
+               'right' => __( 'Right', 'felipa' )
             ],
          ]
       );
@@ -89,4 +89,4 @@ class thegncy_Widget_Button extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Button );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Button );

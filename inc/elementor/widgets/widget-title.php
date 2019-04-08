@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class thegncy_Widget_Title extends Widget_Base {
+class felipa_Widget_Title extends Widget_Base {
  
    public function get_name() {
       return 'title';
    }
  
    public function get_title() {
-      return esc_html__( 'Title', 'thegncy' );
+      return esc_html__( 'Title', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Title extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class thegncy_Widget_Title extends Widget_Base {
       $this->start_controls_section(
          'title_section',
          [
-            'label' => esc_html__( 'Title', 'thegncy' ),
+            'label' => esc_html__( 'Title', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,13 +35,13 @@ class thegncy_Widget_Title extends Widget_Base {
       $this->add_control(
          'align',
          [
-            'label' => __( 'Align', 'thegncy' ),
+            'label' => __( 'Align', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'left',
             'options' => [
-               'center'  => __( 'Center', 'thegncy' ),
-               'left' => __( 'Left', 'thegncy' ),
-               'right' => __( 'Right', 'thegncy' )
+               'center'  => __( 'Center', 'felipa' ),
+               'left' => __( 'Left', 'felipa' ),
+               'right' => __( 'Right', 'felipa' )
             ],
          ]
       );
@@ -50,28 +50,28 @@ class thegncy_Widget_Title extends Widget_Base {
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Sub Title', 'thegncy' ),
+            'label' => __( 'Sub Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Works','thegncy')
+            'default' => __('Works','felipa')
          ]
       );
 
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Latest portfolio','thegncy')
+            'default' => __('Latest portfolio','felipa')
          ]
       );
 
       $this->add_control(
          'border',
          [
-            'label' => __( 'Border Bottom', 'thegncy' ),
+            'label' => __( 'Border Bottom', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'thegncy' ),
-            'label_off' => __( 'Off', 'thegncy' ),
+            'label_on' => __( 'On', 'felipa' ),
+            'label_off' => __( 'Off', 'felipa' ),
             'return_value' => 'yes',
             'default' => 'no',
    
@@ -81,10 +81,10 @@ class thegncy_Widget_Title extends Widget_Base {
       $this->add_control(
          'white-color',
          [
-            'label' => __( 'Enable if Background is Colored', 'thegncy' ),
+            'label' => __( 'Enable if Background is Colored', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'thegncy' ),
-            'label_off' => __( 'Off', 'thegncy' ),
+            'label_on' => __( 'On', 'felipa' ),
+            'label_off' => __( 'Off', 'felipa' ),
             'return_value' => 'yes',
             'default' => 'no',
    
@@ -126,4 +126,4 @@ class thegncy_Widget_Title extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Title );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Title );

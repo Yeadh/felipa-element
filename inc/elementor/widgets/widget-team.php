@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // team
-class thegncy_Widget_Team extends Widget_Base {
+class felipa_Widget_Team extends Widget_Base {
  
    public function get_name() {
       return 'team';
    }
  
    public function get_title() {
-      return esc_html__( 'Team', 'thegncy' );
+      return esc_html__( 'Team', 'felipa' );
    }
  
    public function get_icon() { 
@@ -18,13 +18,13 @@ class thegncy_Widget_Team extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'service_section',
          [
-            'label' => esc_html__( 'Team', 'thegncy' ),
+            'label' => esc_html__( 'Team', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -32,7 +32,7 @@ class thegncy_Widget_Team extends Widget_Base {
       $this->add_control(
          'image',
          [
-            'label' => __( 'Choose photo', 'thegncy' ),
+            'label' => __( 'Choose photo', 'felipa' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -43,7 +43,7 @@ class thegncy_Widget_Team extends Widget_Base {
       $this->add_control(
          'name',
          [
-            'label' => __( 'Name', 'thegncy' ),
+            'label' => __( 'Name', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Pailsabis Tony',
          ]
@@ -51,7 +51,7 @@ class thegncy_Widget_Team extends Widget_Base {
       $this->add_control(
          'designation',
          [
-            'label' => __( 'Designation', 'thegncy' ),
+            'label' => __( 'Designation', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Company Director',
          ]
@@ -60,7 +60,7 @@ class thegncy_Widget_Team extends Widget_Base {
 
       $repeater->add_control(
          'social_icon', [
-            'label' => __( 'Social Icon', 'thegncy' ),
+            'label' => __( 'Social Icon', 'felipa' ),
             'type' => \Elementor\Controls_Manager::ICON,
             'label_block' => true,
             'default' => 'fa fa-facebook',
@@ -68,7 +68,7 @@ class thegncy_Widget_Team extends Widget_Base {
       );
       $repeater->add_control(
          'social_url', [
-            'label' => __( 'Socia URL', 'thegncy' ),
+            'label' => __( 'Socia URL', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'label_block' => true,
          ]
@@ -76,7 +76,7 @@ class thegncy_Widget_Team extends Widget_Base {
       $this->add_control(
          'social_media',
          [
-            'label' => __( 'social profile', 'thegncy' ),
+            'label' => __( 'social profile', 'felipa' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => 'Social Item',
@@ -123,4 +123,4 @@ class thegncy_Widget_Team extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Team );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Team );

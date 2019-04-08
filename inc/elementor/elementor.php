@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // get posts dropdown
-function thegncy_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
+function felipa_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
   $options = [];
   $posts = get_posts($args);
   foreach ((array) $posts as $term) {
@@ -12,22 +12,22 @@ function thegncy_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 
   return $options;
 }
 
-function thegncy_add_elementor_widget_categories( $elements_manager ) {
+function felipa_add_elementor_widget_categories( $elements_manager ) {
 
 	$elements_manager->add_category(
-		'thegncy-elements',
+		'felipa-elements',
 		[
-			'title' => esc_html__( 'TheGncy Elements', 'thegncy' ),
+			'title' => esc_html__( 'felipa Elements', 'felipa' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
 
 }
-add_action( 'elementor/elements/categories_registered', 'thegncy_add_elementor_widget_categories' );
+add_action( 'elementor/elements/categories_registered', 'felipa_add_elementor_widget_categories' );
 
 //Elementor init
 
-class thegncy_ElementorCustomElement {
+class felipa_ElementorCustomElement {
  
    private static $instance = null;
  
@@ -47,6 +47,7 @@ class thegncy_ElementorCustomElement {
     // We check if the Elementor plugin has been installed / activated.
     if(defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base')){
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-banner.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-banner2.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-title.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-contact.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
@@ -62,4 +63,4 @@ class thegncy_ElementorCustomElement {
 
 }
  
-thegncy_ElementorCustomElement::get_instance()->init();
+felipa_ElementorCustomElement::get_instance()->init();

@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class thegncy_Widget_Feature extends Widget_Base {
+class felipa_Widget_Feature extends Widget_Base {
  
    public function get_name() {
       return 'feature';
    }
  
    public function get_title() {
-      return esc_html__( 'Feature', 'thegncy' );
+      return esc_html__( 'Feature', 'felipa' );
    }
  
    public function get_icon() { 
@@ -18,13 +18,13 @@ class thegncy_Widget_Feature extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'service_section',
          [
-            'label' => esc_html__( 'Feature', 'thegncy' ),
+            'label' => esc_html__( 'Feature', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -32,9 +32,9 @@ class thegncy_Widget_Feature extends Widget_Base {
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'thegncy' ),
+            'label' => __( 'Text', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt','thegncy'),
+            'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt','felipa'),
          ]
       );
       
@@ -63,4 +63,4 @@ class thegncy_Widget_Feature extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Feature );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Feature );

@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // blog
-class thegncy_Widget_Blog extends Widget_Base {
+class felipa_Widget_Blog extends Widget_Base {
  
    public function get_name() {
       return 'blog';
    }
  
    public function get_title() {
-      return esc_html__( 'Latest Blog', 'thegncy' );
+      return esc_html__( 'Latest Blog', 'felipa' );
    }
  
    public function get_icon() { 
@@ -18,25 +18,25 @@ class thegncy_Widget_Blog extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'blog_section',
          [
-            'label' => esc_html__( 'Blog', 'thegncy' ),
+            'label' => esc_html__( 'Blog', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
       $this->add_control(
          'order',
          [
-            'label' => __( 'Order', 'thegncy' ),
+            'label' => __( 'Order', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'ASC',
             'options' => [
-               'ASC'  => __( 'Ascending', 'thegncy' ),
-               'DESC' => __( 'Descending', 'thegncy' )
+               'ASC'  => __( 'Ascending', 'felipa' ),
+               'DESC' => __( 'Descending', 'felipa' )
             ],
          ]
       );
@@ -69,7 +69,7 @@ class thegncy_Widget_Blog extends Widget_Base {
                <div class="col-lg-4 col-sm-6">
                   <div class="blog-item">
                      <div class="blog-item-img">
-                        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'thegncy-360-200'); ?>" alt="<?php the_title() ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'felipa-360-200'); ?>" alt="<?php the_title() ?>">
                         <ul class="list-inline blog-item-meta-1">
                            <li class="list-inline-item">
                               <?php the_category( ',' ) ?>
@@ -104,4 +104,4 @@ class thegncy_Widget_Blog extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Blog );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Blog );

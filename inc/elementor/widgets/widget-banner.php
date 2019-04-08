@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Banner Parallax
-class thegncy_Widget_Banner extends Widget_Base {
+class felipa_Widget_Banner extends Widget_Base {
  
    public function get_name() {
       return 'banner_pop';
    }
  
    public function get_title() {
-      return esc_html__( 'Banner', 'thegncy' );
+      return esc_html__( 'Banner', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Banner extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class thegncy_Widget_Banner extends Widget_Base {
       $this->start_controls_section(
          'banner_pop_section',
          [
-            'label' => esc_html__( 'Banner with popup video', 'thegncy' ),
+            'label' => esc_html__( 'Banner with popup video', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,18 +35,18 @@ class thegncy_Widget_Banner extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Creative business agency make big deals','thegncy')
+            'default' => __('Creative business agency make big deals','felipa')
          ]
       );
 
       $this->add_control(
          'description',
          [
-            'label' => __( 'Description', 'thegncy' ),
+            'label' => __( 'Description', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dummy text are usually use. Replace your text bare usuallly use in these section. So i used here. replace your text','thegncy')
+            'default' => __('Lorem ipsum dummy text are usually use. Replace your text bare usuallly use in these section. So i used here. replace your text','felipa')
          ]
       );
       
@@ -55,15 +55,15 @@ class thegncy_Widget_Banner extends Widget_Base {
 
       $button->add_control(
          'btn_text', [
-            'label' => __( 'Text', 'thegncy' ),
+            'label' => __( 'Text', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Learn More','thegncy')
+            'default' => __('Learn More','felipa')
          ]
       );
 
       $button->add_control(
          'btn_url', [
-            'label' => __( 'URL', 'thegncy' ),
+            'label' => __( 'URL', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -72,7 +72,7 @@ class thegncy_Widget_Banner extends Widget_Base {
       $this->add_control(
          'button_list',
          [
-            'label' => __( 'Buttons', 'thegncy' ),
+            'label' => __( 'Buttons', 'felipa' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $button->get_controls(),
             'default' => [
@@ -143,4 +143,4 @@ class thegncy_Widget_Banner extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Banner );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Banner );

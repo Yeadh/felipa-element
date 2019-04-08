@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class thegncy_Widget_Testimonials extends Widget_Base {
+class felipa_Widget_Testimonials extends Widget_Base {
  
    public function get_name() {
       return 'testimonials';
    }
  
    public function get_title() {
-      return esc_html__( 'Testimonials', 'thegncy' );
+      return esc_html__( 'Testimonials', 'felipa' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $this->start_controls_section(
          'title_section',
          [
-            'label' => esc_html__( 'Testimonials', 'thegncy' ),
+            'label' => esc_html__( 'Testimonials', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -37,7 +37,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Choose Photo', 'thegncy' ),
+            'label' => __( 'Choose Photo', 'felipa' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -48,7 +48,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'name',
          [
-            'label' => __( 'Name', 'thegncy' ),
+            'label' => __( 'Name', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             
          ]
@@ -57,7 +57,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'designation',
          [
-            'label' => __( 'Designation', 'thegncy' ),
+            'label' => __( 'Designation', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
@@ -65,7 +65,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'testimonial',
          [
-            'label' => __( 'Testimonial', 'thegncy' ),
+            'label' => __( 'Testimonial', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA
          ]
       );
@@ -73,7 +73,7 @@ class thegncy_Widget_Testimonials extends Widget_Base {
       $this->add_control(
          'testimonial_list',
          [
-            'label' => __( 'Testimonial List', 'thegncy' ),
+            'label' => __( 'Testimonial List', 'felipa' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => 'testimonial_list',
@@ -120,4 +120,4 @@ class thegncy_Widget_Testimonials extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Testimonials );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Testimonials );

@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class thegncy_Widget_Service extends Widget_Base {
+class felipa_Widget_Service extends Widget_Base {
  
    public function get_name() {
       return 'service item';
    }
  
    public function get_title() {
-      return esc_html__( 'Service Item', 'thegncy' );
+      return esc_html__( 'Service Item', 'felipa' );
    }
  
    public function get_icon() { 
@@ -18,39 +18,39 @@ class thegncy_Widget_Service extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'thegncy-elements' ];
+      return [ 'felipa-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'service_section',
          [
-            'label' => esc_html__( 'Service Item', 'thegncy' ),
+            'label' => esc_html__( 'Service Item', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'thegncy' ),
+            'label' => __( 'Icon', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('flaticon-money','thegncy'),
+            'default' => __('flaticon-money','felipa'),
          ]     
       );
 
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'thegncy' ),
+            'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Design','thegncy'),
+            'default' => __('Design','felipa'),
          ]
       );
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'thegncy' ),
+            'label' => __( 'Text', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dummy text in print and website industry are usually use in these section','thegncy'),
+            'default' => __('Lorem ipsum dummy text in print and website industry are usually use in these section','felipa'),
          ]
       );
       
@@ -79,4 +79,4 @@ class thegncy_Widget_Service extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new thegncy_Widget_Service );
+Plugin::instance()->widgets_manager->register_widget_type( new felipa_Widget_Service );
