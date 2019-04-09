@@ -37,10 +37,10 @@ class felipa_Widget_Portfolio extends Widget_Base {
          [
             'label' => __( 'Style', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'slider',
+            'default' => 'one',
             'options' => [
-               'slider'  => __( 'Slider', 'felipa' ),
-               'masonry' => __( 'Masonry', 'felipa' )
+               'one'  => __( 'One', 'felipa' ),
+               'tow' => __( 'Tow', 'felipa' )
             ],
          ]
       );
@@ -106,6 +106,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
       $this->add_inline_editing_attributes( 'title', 'basic' );
       $this->add_inline_editing_attributes( 'deacription', 'basic' );
       ?>
+      <?php if ($settings['style']  == 'one') { ?>
       <div class="container-fluid" style="padding: 0; overflow: hidden;">
          <div class="portfolio">
             <?php
@@ -127,6 +128,31 @@ class felipa_Widget_Portfolio extends Widget_Base {
             <?php endwhile; wp_reset_postdata(); ?> 
          </div>
       </div>
+      <?php }elseif ($settings['style']  == 'tow') {?>
+      <div class="container">
+         <div class="portfolio">
+            <?php
+            $portfolio = new \WP_Query( array(
+            'post_type' => 'portfolio',
+            'posts_per_page' => $settings['ppp']['size']
+            ));
+            /* Start the Loop */
+            while ( $portfolio->have_posts() ) : $portfolio->the_post();
+            $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
+            ?>
+
+            <div class="portfolio-item-2">
+               <a href="<?php the_permalink(); ?>">
+                  <?php the_post_thumbnail( 'felipa-475-540' ) ?>
+                  <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
+               </a>
+            </div>
+
+            <?php endwhile; wp_reset_postdata(); ?> 
+         </div>
+      </div>
+     <?php } ?>
+   
       <?php }
  
 }
