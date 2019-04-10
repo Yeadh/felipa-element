@@ -50,7 +50,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
          [
             'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'CASE STUDIES',
+            'default' => 'Projects',
          ]
       );
 
@@ -59,7 +59,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
          [
             'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'Latest portfolios',
+            'default' => 'Check our portfolios',
          ]
       );
 
@@ -129,8 +129,26 @@ class felipa_Widget_Portfolio extends Widget_Base {
          </div>
       </div>
       <?php }elseif ($settings['style']  == 'tow') {?>
+
+         
       <div class="portfolio-container">
-         <div class="portfolio-2">
+            <div class="row swiper-title">
+               <div class="col-md-3">
+                  <div class="section-title color" style="text-align: left">
+                    <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
+                    <h1><?php echo esc_html( $settings['title'] ); ?></h1>
+                 </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="swiper-pagination"></div>
+               </div>
+               <div class="col-md-2">
+                  <div class="felipa-btn">
+                     <a href="#">View gallery</a>
+                  </div>
+               </div>
+         </div>
+         <div class="portfolio-2 swiper-wrapper">
             <?php
             $portfolio = new \WP_Query( array(
             'post_type' => 'portfolio',
@@ -141,9 +159,9 @@ class felipa_Widget_Portfolio extends Widget_Base {
             $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
             ?>
 
-            <div class="portfolio-item-2">
+            <div class="portfolio-item-2 swiper-slide">
                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail() ?>
+                  <?php the_post_thumbnail('felipa-470-375') ?>
                   <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
                </a>
             </div>
