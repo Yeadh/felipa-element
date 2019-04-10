@@ -87,7 +87,7 @@ class felipa_Widget_Blog extends Widget_Base {
                               <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?><?php the_author(); ?></a>
                            </li>
                            <li class="list-inline-item">
-                              <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+                              <?php echo get_the_time('d M Y') ?>
                            </li>
                         </ul>       
                      </div>
