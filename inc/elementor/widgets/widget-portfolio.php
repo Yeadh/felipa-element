@@ -129,8 +129,8 @@ class felipa_Widget_Portfolio extends Widget_Base {
          </div>
       </div>
       <?php }elseif ($settings['style']  == 'tow') {?>
-      <div class="container">
-         <div class="portfolio">
+      <div class="portfolio-container">
+         <div class="portfolio-2">
             <?php
             $portfolio = new \WP_Query( array(
             'post_type' => 'portfolio',
@@ -143,7 +143,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
 
             <div class="portfolio-item-2">
                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail( 'felipa-475-540' ) ?>
+                  <?php the_post_thumbnail() ?>
                   <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
                </a>
             </div>
