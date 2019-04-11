@@ -194,34 +194,6 @@ class felipa_Widget_Banner3 extends Widget_Base {
             </div>
         </div>
       </section>
-      <div class="service-banner-shape">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="banner-service">
-                <img src="<?php echo esc_url($settings['image-1']['url']); ?>" alt="img">
-                <h3><?php echo esc_html($settings['title-1']); ?></h3>
-                <p><?php echo esc_html($settings['text-1']); ?></p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="banner-service">
-                <img src="<?php echo esc_url($settings['image-2']['url']); ?>" alt="img">
-                <h3><?php echo esc_html($settings['title-2']); ?></h3>
-                <p><?php echo esc_html($settings['text-2']); ?></p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="banner-service">
-                <img src="<?php echo esc_url($settings['image-3']['url']); ?>" alt="img">
-                <h3><?php echo esc_html($settings['title-3']); ?></h3>
-                <p><?php echo esc_html($settings['text-3']); ?></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <?php
    }
  
