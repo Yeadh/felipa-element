@@ -40,7 +40,8 @@ class felipa_Widget_Portfolio extends Widget_Base {
             'default' => 'one',
             'options' => [
                'one'  => __( 'One', 'felipa' ),
-               'tow' => __( 'Tow', 'felipa' )
+               'two' => __( 'Two', 'felipa' ),
+               'three' => __( 'Three', 'felipa' )
             ],
          ]
       );
@@ -90,6 +91,15 @@ class felipa_Widget_Portfolio extends Widget_Base {
          ]
       );
 
+      $this->add_control(
+         'view-all-url',
+         [
+            'label' => __( 'View all url', 'felipa' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => '#',
+         ]
+      );
+
       $this->end_controls_section();
 
    }
@@ -128,26 +138,29 @@ class felipa_Widget_Portfolio extends Widget_Base {
             <?php endwhile; wp_reset_postdata(); ?> 
          </div>
       </div>
-      <?php }elseif ($settings['style']  == 'tow') {?>
+
+      <?php } elseif ($settings['style']  == 'two' or $settings['style']  == 'three') {?>
 
          
       <div class="portfolio-container">
-            <div class="row swiper-title">
-               <div class="col-md-3">
-                  <div class="section-title color" style="text-align: left">
-                    <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
-                    <h1><?php echo esc_html( $settings['title'] ); ?></h1>
-                 </div>
+         <?php if ('two' == $settings['style']  ): ?>
+         <div class="row swiper-title">
+            <div class="col-md-3">
+               <div class="section-title color" style="text-align: left">
+                 <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
+                 <h1><?php echo esc_html( $settings['title'] ); ?></h1>
+              </div>
+            </div>
+            <div class="col-md-4">
+               <div class="swiper-pagination"></div>
+            </div>
+            <div class="col-md-2">
+               <div class="felipa-btn">
+                  <a href="<?php echo esc_url( $settings['view-all-url'] ); ?>">View gallery</a>
                </div>
-               <div class="col-md-4">
-                  <div class="swiper-pagination"></div>
-               </div>
-               <div class="col-md-2">
-                  <div class="felipa-btn">
-                     <a href="#">View gallery</a>
-                  </div>
-               </div>
+            </div>
          </div>
+         <?php endif; ?>
          <div class="portfolio-2 swiper-wrapper">
             <?php
             $portfolio = new \WP_Query( array(
@@ -159,9 +172,13 @@ class felipa_Widget_Portfolio extends Widget_Base {
             $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
             ?>
 
-            <div class="portfolio-item-2 swiper-slide">
+            <div class="portfolio-item-<?php if ('three' == $settings['style']  ){ echo'3'; } elseif ('two' == $settings['style']){ echo'2'; } ?> swiper-slide">
                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('felipa-470-375') ?>
+                  <?php if ( 'three' == $settings['style'] ){ 
+                     the_post_thumbnail('felipa-360-500');
+                  } elseif ( 'two' == $settings['style'] ){ 
+                     the_post_thumbnail('felipa-470-375');
+                  } ?>
                   <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
                </a>
             </div>
@@ -170,6 +187,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
          </div>
       </div>
      <?php } ?>
+
    
       <?php }
  
