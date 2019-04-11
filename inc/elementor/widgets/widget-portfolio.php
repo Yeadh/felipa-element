@@ -40,8 +40,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
             'default' => 'one',
             'options' => [
                'one'  => __( 'One', 'felipa' ),
-               'two' => __( 'Two', 'felipa' ),
-               'three' => __( 'Three', 'felipa' )
+               'two' => __( 'Two', 'felipa' )
             ],
          ]
       );
@@ -139,7 +138,7 @@ class felipa_Widget_Portfolio extends Widget_Base {
          </div>
       </div>
 
-      <?php } elseif ($settings['style']  == 'two' or $settings['style']  == 'three') {?>
+      <?php } elseif ($settings['style']  == 'two') {?>
 
          
       <div class="portfolio-container">
@@ -172,13 +171,9 @@ class felipa_Widget_Portfolio extends Widget_Base {
             $portfolio_terms = get_the_terms( get_the_ID() , 'portfolio_category' );
             ?>
 
-            <div class="portfolio-item-<?php if ('three' == $settings['style']  ){ echo'3'; } elseif ('two' == $settings['style']){ echo'2'; } ?> swiper-slide">
+            <div class="portfolio-item-2 swiper-slide">
                <a href="<?php the_permalink(); ?>">
-                  <?php if ( 'three' == $settings['style'] ){ 
-                     the_post_thumbnail('felipa-360-500');
-                  } elseif ( 'two' == $settings['style'] ){ 
-                     the_post_thumbnail('felipa-470-375');
-                  } ?>
+                  <?php the_post_thumbnail('felipa-470-375'); ?>
                   <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
                </a>
             </div>

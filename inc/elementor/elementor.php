@@ -55,6 +55,7 @@ class felipa_ElementorCustomElement {
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-service.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-feature.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-portfolio.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-portfolio2.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-testimonials.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-team.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-blog.php');
