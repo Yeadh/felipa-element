@@ -48,10 +48,14 @@ class felipa_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Title', 'felipa' ),
+            'label' => __( 'Sub title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'Projects',
+            'default' => 'Projects', 
+            'condition' => [
+               'style' => 'two',
+            ]
          ]
+         
       );
 
       $this->add_control(
@@ -60,6 +64,9 @@ class felipa_Widget_Portfolio extends Widget_Base {
             'label' => __( 'Title', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Check our portfolios',
+            'condition' => [
+               'style' => 'two',
+            ]
          ]
       );
 
@@ -69,6 +76,9 @@ class felipa_Widget_Portfolio extends Widget_Base {
             'label' => __( 'Deacription', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Lorem ipsum dolor sit amet, consectetur sicing elit, sed do eiusmod tempor incidid ut labore et dolore',
+            'condition' => [
+               'style' => 'two',
+            ]
          ]
       );
 
@@ -86,7 +96,8 @@ class felipa_Widget_Portfolio extends Widget_Base {
             ],
             'default' => [
                'size' => 5,
-            ]
+            ],
+            'separator' => 'before',
          ]
       );
 
@@ -96,6 +107,9 @@ class felipa_Widget_Portfolio extends Widget_Base {
             'label' => __( 'View all url', 'felipa' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
+            'condition' => [
+               'style' => 'two',
+            ]
          ]
       );
 
