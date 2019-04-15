@@ -135,6 +135,7 @@ class felipa_Widget_portfolio3 extends Widget_Base {
                      </div>
 
                      <?php endwhile; wp_reset_postdata(); ?>
+                     
                   </div>
                </div>
             </div>

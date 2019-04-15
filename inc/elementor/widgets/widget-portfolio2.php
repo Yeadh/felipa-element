@@ -51,15 +51,6 @@ class felipa_Widget_Portfolio2 extends Widget_Base {
       );
 
       $this->add_control(
-         'deacription',
-         [
-            'label' => __( 'Deacription', 'felipa' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'Lorem ipsum dolor sit amet, consectetur sicing elit, sed do eiusmod tempor incidid ut labore et dolore',
-         ]
-      );
-
-      $this->add_control(
          'ppp',
          [
             'label' => __( 'Number of Portfolio', 'felipa' ),
@@ -100,7 +91,6 @@ class felipa_Widget_Portfolio2 extends Widget_Base {
       $this->add_inline_editing_attributes( 'ppp', 'basic' );
       $this->add_inline_editing_attributes( 'sub-title', 'basic' );
       $this->add_inline_editing_attributes( 'title', 'basic' );
-      $this->add_inline_editing_attributes( 'deacription', 'basic' );
       $this->add_inline_editing_attributes( 'url', 'basic' );
       ?>
 
