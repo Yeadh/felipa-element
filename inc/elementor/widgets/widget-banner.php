@@ -27,7 +27,7 @@ class felipa_Widget_Banner extends Widget_Base {
       $this->start_controls_section(
          'banner_section',
          [
-            'label' => esc_html__( 'Banner with popup video', 'felipa' ),
+            'label' => esc_html__( 'Banner 1', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -108,19 +108,13 @@ class felipa_Widget_Banner extends Widget_Base {
  
       // get our input from the widget settings.
        
-      $settings = $this->get_settings_for_display();
-      
-      //Inline Editing
-      $this->add_inline_editing_attributes( 'title', 'basic' );
-      $this->add_inline_editing_attributes( 'description', 'basic' );
-      $this->add_inline_editing_attributes( 'button_list', 'basic' );
-      ?>
+      $settings = $this->get_settings_for_display(); ?>
 
-      <section id="banner" style="background-image: url($settings['title']);" class="banner-4">
+      <section style="background-image: url(<?php echo $settings['banner_image'][url] ?>);" class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 d-none d-xl-block">
-                    <div class="banner-3-content">
+                    <div class="banner-content">
                       <h1><?php echo esc_html($settings['title']); ?></h1>
                       <p><?php echo esc_html($settings['description']); ?></p>
                       <div class="bnr-btn">
@@ -133,7 +127,7 @@ class felipa_Widget_Banner extends Widget_Base {
                     </div>
                 </div>
                 <div class="col-lg-12 d-block d-lg-block d-sm-block d-xl-none">
-                    <div class="banner-3-content">
+                    <div class="banner-content">
                       <h1><?php echo esc_html($settings['title']); ?></h1>
                       <p><?php echo esc_html($settings['description']); ?></p>
                       <div class="bnr-btn">

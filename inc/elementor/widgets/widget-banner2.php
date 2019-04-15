@@ -25,11 +25,33 @@ class felipa_Widget_Banner2 extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'banner_pop_section',
+         'banner_2',
          [
-            'label' => esc_html__( 'Banner with popup video', 'felipa' ),
+            'label' => esc_html__( 'Banner 2', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
+      );
+
+      $this->add_control(
+      'banner_image',
+        [
+          'label' => __( 'Choose banner background image', 'felipa' ),
+          'type' => \Elementor\Controls_Manager::MEDIA,
+          'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+          ],
+        ]
+      );
+
+      $this->add_control(
+      'banner_vector',
+        [
+          'label' => __( 'Choose banner vector', 'felipa' ),
+          'type' => \Elementor\Controls_Manager::MEDIA,
+          'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+          ],
+        ]
       );
 
       $this->add_control(
@@ -164,36 +186,36 @@ class felipa_Widget_Banner2 extends Widget_Base {
  
       // get our input from the widget settings.
        
-      $settings = $this->get_settings_for_display();
-      
-      //Inline Editing
-      $this->add_inline_editing_attributes( 'title', 'basic' );
-      $this->add_inline_editing_attributes( 'description', 'basic' );
-      $this->add_inline_editing_attributes( 'button_list', 'basic' );
-      $this->add_inline_editing_attributes( 'image-1', 'basic' );
-      $this->add_inline_editing_attributes( 'title-1', 'basic' );
-      $this->add_inline_editing_attributes( 'text-1', 'basic' );
-      $this->add_inline_editing_attributes( 'image-2', 'basic' );
-      $this->add_inline_editing_attributes( 'title-2', 'basic' );
-      $this->add_inline_editing_attributes( 'text-2', 'basic' );
-      $this->add_inline_editing_attributes( 'image-3', 'basic' );
-      $this->add_inline_editing_attributes( 'title-3', 'basic' );
-      $this->add_inline_editing_attributes( 'text-3', 'basic' );
-      ?>
+      $settings = $this->get_settings_for_display(); ?>
 
-      <section id="banner" class="banner-4 bnr-height-long">
+
+
+
+    <section class="banner-2" style="background-image: url(<?php echo $settings['banner_image'][url] ?>);">
+        <span class="moving_circle circle1"></span>
+        <span class="moving_circle circle2"></span>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-lg-6 col-sm-12">
                     <div class="banner-3-content">
-                      <h1><?php echo esc_html($settings['title']); ?></h1>
-                      <p><?php echo esc_html($settings['description']); ?></p>
-                      <a class="bnr-btn-2" href="<?php echo esc_url( $settings['btn_url'] ); ?>"><?php echo esc_attr( $settings['btn_text'] ); ?></a>
+                        <h1><?php echo esc_html($settings['title']); ?></h1>
+                        <p><?php echo esc_html($settings['description']); ?></p>
+                        <div class="bnr-btn">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="<?php echo esc_url( $settings['btn_url'] ); ?>"><?php echo esc_attr( $settings['btn_text'] ); ?></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-lg-6 col-sm-12">
+                    <div class="banner-images">
+                        <img src="<?php echo $settings['banner_vector'][url] ?>" alt="vector">
                     </div>
                 </div>
             </div>
         </div>
-      </section>
+    </section>
+    <section class="feature_services">
       <div class="service-banner-shape">
         <div class="container">
           <div class="row">
@@ -221,6 +243,7 @@ class felipa_Widget_Banner2 extends Widget_Base {
           </div>
         </div>
       </div>
+    </section>
 
       <?php
    }
