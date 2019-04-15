@@ -25,11 +25,22 @@ class felipa_Widget_Banner extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'banner_pop_section',
+         'banner_section',
          [
             'label' => esc_html__( 'Banner with popup video', 'felipa' ),
             'type' => Controls_Manager::SECTION,
          ]
+      );
+
+      $this->add_control(
+      'banner_image',
+        [
+          'label' => __( 'Choose banner image', 'felipa' ),
+          'type' => \Elementor\Controls_Manager::MEDIA,
+          'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+          ],
+        ]
       );
 
       $this->add_control(
@@ -105,7 +116,7 @@ class felipa_Widget_Banner extends Widget_Base {
       $this->add_inline_editing_attributes( 'button_list', 'basic' );
       ?>
 
-      <section id="banner" class="banner-4">
+      <section id="banner" style="background-image: url($settings['title']);" class="banner-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 d-none d-xl-block">
