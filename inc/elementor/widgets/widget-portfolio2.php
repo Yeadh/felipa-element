@@ -96,16 +96,16 @@ class felipa_Widget_Portfolio2 extends Widget_Base {
 
       <div class="portfolio-container">
          <div class="row swiper-title">
-            <div class="col-md-3">
+            <div class="col-xl-3 col-md-12">
                <div class="section-title color" style="text-align: left">
                  <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
                  <h1><?php echo esc_html( $settings['title'] ); ?></h1>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-xl-4">
                <div class="swiper-pagination"></div>
             </div>
-            <div class="col-md-2">
+            <div class="col-xl-2">
                <div class="felipa-btn">
                   <a href="<?php echo esc_url( $settings['view-all-url'] ); ?>">View gallery</a>
                </div>

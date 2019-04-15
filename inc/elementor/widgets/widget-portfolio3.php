@@ -107,7 +107,7 @@ class felipa_Widget_portfolio3 extends Widget_Base {
       <div class="container-fluid">
          <div class="portfolio-left">
             <div class="row">
-               <div class="col-md-3">
+               <div class="col-xl-3 col-md-12">
                   <div class="section-title">
                      <span><?php echo esc_html( $settings['sub-title'] ); ?></span>
                      <h1><?php echo esc_html( $settings['title'] ); ?></h1>
@@ -117,7 +117,7 @@ class felipa_Widget_portfolio3 extends Widget_Base {
                      </div>
                   </div>
                </div>
-               <div class="col-md-9">
+               <div class="col-xl-9 col-md-12">
                   <div class="portfolio-3">
                      <?php
                      $portfolio = new \WP_Query( array(
