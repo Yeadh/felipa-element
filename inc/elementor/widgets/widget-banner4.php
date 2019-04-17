@@ -122,7 +122,7 @@ class felipa_Widget_Banner4 extends Widget_Base {
                                   <li class="list-inline-item"><a href="<?php echo esc_url( $settings['btn_url'] ); ?>"><?php echo esc_attr( $settings['btn_text'] ); ?></a></li>
                                   <li class="list-inline-item">
                                     <a class="popup-youtube" href="<?php echo esc_url( $settings['video_url'] ); ?>">
-                                      <img src="<?php echo get_template_directory_uri().'/img/play-btn.png' ?>" alt="Image">Watch video
+                                      <i class="fa fa-play"></i>
                                     </a>
                                   </li>
                               </ul>
