@@ -53,7 +53,7 @@ class felipa_Widget_Button extends Widget_Base {
          [
             'label' => __( 'Align', 'felipa' ),
             'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'solid',
+            'default' => 'left',
             'options' => [
                'center'  => __( 'Center', 'felipa' ),
                'left' => __( 'Left', 'felipa' ),
