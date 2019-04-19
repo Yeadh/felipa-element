@@ -69,7 +69,7 @@ class felipa_Widget_Contact extends Widget_Base {
       <div class="contact-item">
          <i class="<?php echo esc_attr($settings['icon']); ?>"></i>
          <h5><?php echo esc_html($settings['title']); ?></h5>
-         <p><?php echo $settings['text'] ?></p>
+         <?php echo $settings['text'] ?>
       </div>
 
       <?php
