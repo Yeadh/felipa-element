@@ -124,7 +124,7 @@ class felipa_Widget_Portfolio2 extends Widget_Base {
 
             <div class="portfolio-item-2 swiper-slide">
                <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('felipa-470-375'); ?>
+                  <?php the_post_thumbnail('felipa-470-470'); ?>
                   <h5><?php echo wp_trim_words( get_the_title(), 3, '...' );?></h5>
                </a>
             </div>
